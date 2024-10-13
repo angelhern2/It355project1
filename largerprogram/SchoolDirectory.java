@@ -99,7 +99,7 @@ public final class SchoolDirectory {
         SchoolDirectory directory = SchoolDirectory.getInstance();
 
         // Load people from file
-        directory.loadPeopleFromFile("people.txt");
+        directory.loadPeopleFromFile("C:\\Programs\\355project1\\largerprogram/people.txt");
 
         // Print all entries in the directory
         directory.printAllPeople();
