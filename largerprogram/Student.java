@@ -2,7 +2,7 @@ public final class Student extends Person {
     private final String course;
 
     public Student(String name, int id, String course) {
-        super(name, id); // Call to Person constructor
+        super(name, id);
         if (course == null || course.isEmpty()) {
             throw new IllegalArgumentException("Course cannot be null or empty.");
         }
