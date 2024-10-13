@@ -1,4 +1,4 @@
-/* this program is to demonstrate how to have code compliant with Rule Code: FIO14-J   Name:  Perform Proper Clean Up at Program Termination */
+ /* this program is to demonstrate how to have code compliant with Rule Code: FIO14-J   Name:  Perform Proper Clean Up at Program Termination */
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
