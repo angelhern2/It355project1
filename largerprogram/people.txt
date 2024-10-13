@@ -9,3 +9,4 @@ TEACHER, Mr. David King, Physical Education
 STUDENT, Olivia Davis, Art
 TEACHER, Mr. Alan Scott, Music
 PRINCIPAL, Dr. George Miller
+PRINCIPAL, Dr. George Smith
