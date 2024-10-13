@@ -1,12 +1,19 @@
-#include <jni.h>
-#include <stdio.h>
 //Assumes proper Java JNI class has been implemented
 // Correct usage of JNI for object manipulation
-extern "C" JNIEXPORT void JNICALL Java_MyClass_nativeMethod(JNIEnv *env, jobject obj) {
-    jclass clazz = (*env)->GetObjectClass(env, obj);  // Access class safely through JNI functions
+#include <jni.h>
+#include <iostream>
 
-    jmethodID mid = (*env)->GetMethodID(env, clazz, "someMethod", "()V");
-    if (mid != NULL) {
-        (*env)->CallVoidMethod(env, obj, mid);  // Safely call the method
+extern "C" {
+    JNIEXPORT void JNICALL Java_MyClass_nativeMethod(JNIEnv *env, jobject obj) {
+        // Safely accessing Java object methods without direct pointers
+        jclass clazz = env->GetObjectClass(obj);  // Get the class of the object
+
+        jmethodID methodID = env->GetMethodID(clazz, "someMethod", "()V");
+        if (methodID != nullptr) {
+            env->CallVoidMethod(obj, methodID);  // Correct way to call a Java method from JNI
+        } else {
+            std::cerr << "Method not found!" << std::endl;
+        }
     }
 }
+
