@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileOperations {
+public class ProperCleanUp {
     public static void main(String[] args) {
         FileWriter writer = null;
         try {
