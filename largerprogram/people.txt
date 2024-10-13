@@ -1,0 +1,11 @@
+STUDENT, John Doe, Mathematics
+STUDENT, Jane Smith, Physics
+TEACHER, Dr. Alice Johnson, Chemistry
+TEACHER, Mr. Bob White, History
+STUDENT, Emma Brown, Biology
+STUDENT, William Green, English Literature
+TEACHER, Ms. Susan Clark, Computer Science
+TEACHER, Mr. David King, Physical Education
+STUDENT, Olivia Davis, Art
+TEACHER, Mr. Alan Scott, Music
+PRINCIPAL, Dr. George Miller
