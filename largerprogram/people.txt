@@ -1,11 +1,11 @@
-STUDENT, John Doe, Mathematics
-STUDENT, Jane Smith, Physics
+STUDENT, John Doe, Mathematics, 100.0
+STUDENT, Jane Smith, Physics, 150.0
 TEACHER, Dr. Alice Johnson, Chemistry
 TEACHER, Mr. Bob White, History
-STUDENT, Emma Brown, Biology
-STUDENT, William Green, English Literature
+STUDENT, Emma Brown, Biology, 200.0
+STUDENT, William Green, English Literature, 50.0
 TEACHER, Ms. Susan Clark, Computer Science
 TEACHER, Mr. David King, Physical Education
-STUDENT, Olivia Davis, Art
+STUDENT, Olivia Davis, Art, 75.0
 TEACHER, Mr. Alan Scott, Music
 PRINCIPAL, Dr. George Miller

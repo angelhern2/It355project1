@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
 public final class SchoolDirectory {
 
@@ -71,11 +72,19 @@ public final class SchoolDirectory {
                 String[] tokens = line.split(", ");
                 String role = tokens[0].trim();
                 String name = tokens[1].trim();
-
+    
                 if ("STUDENT".equalsIgnoreCase(role)) {
                     String course = tokens[2].trim();
+                    double flexDollars = 0.0; // Default flex dollars
+                    if (tokens.length > 3) {
+                        try {
+                            flexDollars = Double.parseDouble(tokens[3].trim());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid flex dollars for " + name + ". Defaulting to $0.0.");
+                        }
+                    }
                     int studentId = generateSecureId();
-                    Student student = new Student(name, studentId, course);
+                    Student student = new Student(name, studentId, course, flexDollars);
                     addPerson(student);
                 } else if ("TEACHER".equalsIgnoreCase(role)) {
                     String subject = tokens[2].trim();
@@ -94,14 +103,21 @@ public final class SchoolDirectory {
             e.printStackTrace(); // Do not suppress exceptions
         }
     }
+    
 
     public static void main(String[] args) {
         SchoolDirectory directory = SchoolDirectory.getInstance();
-
-        // Load people from file
-        directory.loadPeopleFromFile("people.txt");
-
+        Scanner scanner = new Scanner(System.in);
+    
+        // Prompt user for the file name or file path
+        System.out.print("Enter the file name (with path) to load people: ");
+        String filePath = scanner.nextLine();
+    
+        // Load people from the user-provided file path
+        directory.loadPeopleFromFile(filePath);
+    
         // Print all entries in the directory
         directory.printAllPeople();
     }
+    
 }
