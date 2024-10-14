@@ -16,7 +16,7 @@ public final class Student extends Person {
     }
 
     public String getCourse() {
-        return course.toString();
+        return course;
     }
 
     public double getFlexDollars() {
