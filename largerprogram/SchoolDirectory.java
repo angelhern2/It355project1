@@ -1,9 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.Scanner;
 
 public final class SchoolDirectory {
@@ -60,15 +60,15 @@ public final class SchoolDirectory {
 
     // Generate secure random IDs
     public int generateSecureId() {
-        Random random = new Random();
-        return random.nextInt(90000) + 10000; // Generate random 5-digit number
+        SecureRandom random = new SecureRandom();
+        return random.nextInt(9999) + 10000; // Generate strong random 5-digit number
     }
 
     // Read people from a file and add them to the directory
     public void loadPeopleFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) { // no empty loops are being used
                 String[] tokens = line.split(", ");
                 String role = tokens[0].trim();
                 String name = tokens[1].trim();
@@ -96,7 +96,8 @@ public final class SchoolDirectory {
                     Principal principal = Principal.getInstance(name, principalId);
                     addPrincipal(principal);
                 } else {
-                    System.out.println("Unknown role: " + role);
+                    System.out.println("Unknown role: " + role); // used incase the the expected input are not right , a
+                                                                 // type of validation
                 }
             }
         } catch (IOException e) {

@@ -4,7 +4,7 @@ public final class Principal extends Person {
 
     // Private constructor to prevent direct instantiation
     private Principal(String name, int id) {
-        super(name, id); // Call to Person constructor
+        super(name, id);
     }
 
     // Singleton method to get the only instance of Principal
@@ -19,4 +19,5 @@ public final class Principal extends Person {
     public String getRole() {
         return "Principal";
     }
+
 }
